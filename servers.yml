@@ -1,0 +1,28 @@
+APP_PAYMENT:
+  grep: /dev/mapper/rhel-root
+  ips:
+    - 10.10.10.3
+    - 10.10.10.4
+    - 10.10.10.5
+    - 10.10.10.6
+
+APP_DATABASE:
+  grep: /dev/mapper/centos-app_home
+  ips:
+    - 10.20.20.3
+    - 10.20.20.4
+    - 10.20.20.5
+    - 10.20.20.6
+    - 10.20.20.7
+
+Secondary-DATABASE:
+  grep: /dev/mapper/
+  ips:
+    - ip: 10.20.30.1
+      grep: /dev/mapper/rhel-root
+    - ip: 10.20.30.2
+      grep: /dev/mapper/rhel-root
+    - ip: 10.20.30.3
+      grep: /dev/mapper/centos-root
+    - ip: 10.20.30.4
+      grep: /dev/mapper/oralinux-root
