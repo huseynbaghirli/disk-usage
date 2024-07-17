@@ -31,7 +31,7 @@ Use the following PowerShell command to encrypt your password:
 ```
 ### 5.Add Server IPs to servers.yml File
 Open the servers.yml file and add your server IP addresses and other required details
-[a link](https://github.com/huseynbaghirli/disk-usage/blob/main/servers.yml)
+[a link](https://github.com/huseynbaghirli/disk-usage-checker/blob/main/servers.yml)
 ### 6. Run the Application
  ```sh
  cd /path/to/disk-usage
