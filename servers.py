@@ -24,18 +24,18 @@ class DiskUsageApp:
         self.root = root
         self.root.title("Disk Usage Checker")
         
-        # Pencere boyutunu ayarlama
+        # Set window size
         self.root.geometry("1600x900")
         self.root.configure(bg='#1c1c1c')
         
-        # Yazı tipi ayarları
+        # Font settings
         self.font_style = ("Courier", 15)
         
-        # Başlık etiketi
+        # Title label
         self.title_label = tk.Label(root, text="Disk Usage Checker", font=("Helvetica", 28, "bold"), bg='#1c1c1c', fg='#f39c12')
         self.title_label.pack(pady=20)
 
-        # Text alanı
+        # Text area
         self.text_area = scrolledtext.ScrolledText(root, width=170, height=26, font=self.font_style, bg="#2c2c2c", fg="white", insertbackground="white", state='disabled')
         self.text_area.pack(pady=20)
 
@@ -53,7 +53,7 @@ class DiskUsageApp:
         self.night_mode_button = ttk.Button(self.button_frame, text="Toggle Night Mode", command=self.toggle_night_mode, style='TButton')
         self.night_mode_button.pack(side='left', padx=10)
 
-        # Renk ayarları
+        # Color settings
         self.text_area.tag_configure("header", font=("Courier", 14, "bold"), foreground="white")
         self.text_area.tag_configure("red", foreground="red")
         self.text_area.tag_configure("yellow", foreground="yellow")
@@ -61,12 +61,12 @@ class DiskUsageApp:
         self.text_area.tag_configure("green", foreground="green")
         self.text_area.tag_configure("reset", foreground="white")
         
-        # Başlangıçta bir şeyler yazmak
+        # Initial text
         self.text_area.config(state='normal')
         self.text_area.insert(tk.END, "Click 'Check Disk Usage' button.\n", "header")
         self.text_area.config(state='disabled')
         
-        self.night_mode = True  # Night mode başlangıç durumu
+        self.night_mode = True  # Initial night mode state
 
     def toggle_night_mode(self):
         if self.night_mode:
@@ -102,13 +102,13 @@ class DiskUsageApp:
         return servers
 
     def decrypt_password(self, encrypted_password):
-        # Bu örnekte, parolanızın Base64 ile şifrelendiğini varsayıyoruz.
+        # In this example, we assume your password is encrypted with Base64.
         return base64.b64decode(encrypted_password).decode('utf-8')
 
     def check_disk_usage(self):
         self.text_area.config(state='normal')
         self.text_area.delete(1.0, tk.END)
-        encrypted_password = "eW91cl9wYXNzd29yZA=="  # Parolanızın şifrelenmiş hali
+        encrypted_password = "eW91cl9wYXNzd29yZA=="  # Encrypted password
         
         password = self.decrypt_password(encrypted_password)
         
