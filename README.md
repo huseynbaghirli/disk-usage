@@ -16,10 +16,11 @@ Python Desktop Application for checking disk usage on remote servers.
 - Open PowerShell and download Python from the [official website](https://www.python.org/downloads/).
 ![Install Python](https://github.com/user-attachments/assets/c1f82b38-c080-46e9-8f8d-25cc86ad439c)
 
-### 2. Install the PyYAML Module
+### 2. Install the PyYAML adn Paramiko Module
 - Open PowerShell and run the following command:
   ```sh
   pip install pyyaml
+  pip install paramiko
 ### 3. Add SSH User and Password to servers.py File
 Open the servers.py file and add your SSH username and encrypted password
 ![image](https://github.com/user-attachments/assets/0127df85-f3d5-431a-affa-3463b47ad42d)
